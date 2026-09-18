@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -116,50 +116,50 @@
 <div class="topstrip">
   <div class="wrap">
     <div class="brand"><b>MAGIC HANDS</b><span class="brand-tag">CAR WASH AND DETAILING / CERAMICPRO ELITE DEALER</span></div>
-    <a href="index.html" class="nav-link">← VOLVER AL INICIO</a>
+    <a href="index.html" class="nav-link">&larr; BACK TO HOME</a>
   </div>
 </div>
 
 <header>
   <div class="wrap">
-    <div class="eyebrow">Programa corporativo</div>
-    <h1>Comparativo de precios por lavada</h1>
-    <p class="sub">Precio normal por tamaño de auto vs. precio efectivo por lavada con cada membresía, incluyendo los descuentos corporativos por volumen.</p>
+    <div class="eyebrow">Corporate Program</div>
+    <h1>Price Comparison per Wash</h1>
+    <p class="sub">Standard price by vehicle size vs. effective price per wash with each membership, including volume-based corporate discounts.</p>
   </div>
 </header>
 
 <section>
   <div class="wrap">
-    <h2>Precio normal por tamaño (sin membresía)</h2>
-    <p>Ticket promedio real, Agosto 2026 — dashboard Lavado Automóvil.</p>
+    <h2>Standard Price by Size (Without Membership)</h2>
+    <p>Actual average ticket, August 2026 — Car Wash Dashboard.</p>
     <div class="base-row" id="baseRow"></div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>Precio efectivo por lavada, según membresía</h2>
-    <p>Elige el nivel de descuento corporativo para ver el precio por lavada y el ahorro frente al precio normal.</p>
+    <h2>Effective Price per Wash, by Membership</h2>
+    <p>Select the corporate discount tier to view the price per wash and savings compared to the standard price.</p>
 
     <div class="tier-toggle" id="tierToggle">
-      <button class="tier-btn" data-d="0">Sin descuento</button>
-      <button class="tier-btn" data-d="0.05">-5% (3–4 personas)</button>
-      <button class="tier-btn" data-d="0.10">-10% (5–9 personas)</button>
-      <button class="tier-btn" data-d="0.20">-20% (10–24 personas)</button>
-      <button class="tier-btn active" data-d="0.25">-25% (25–49 personas)</button>
-      <button class="tier-btn" data-d="0.30">-30% (50–79 personas)</button>
-      <button class="tier-btn" data-d="0.35">-35% (80–99 personas)</button>
-      <button class="tier-btn" data-d="0.40">-40% (100+ personas)</button>
+      <button class="tier-btn" data-d="0">No discount</button>
+      <button class="tier-btn" data-d="0.05">-5% (3–4 people)</button>
+      <button class="tier-btn" data-d="0.10">-10% (5–9 people)</button>
+      <button class="tier-btn" data-d="0.20">-20% (10–24 people)</button>
+      <button class="tier-btn active" data-d="0.25">-25% (25–49 people)</button>
+      <button class="tier-btn" data-d="0.30">-30% (50–79 people)</button>
+      <button class="tier-btn" data-d="0.35">-35% (80–99 people)</button>
+      <button class="tier-btn" data-d="0.40">-40% (100+ people)</button>
     </div>
 
     <div class="cards" id="cardsGrid"></div>
 
-    <p class="footnote">*Precio/lavada de Magic asume 5 lavadas al mes para fines comparativos — la membresía en sí es ilimitada. Magic no aplica a vehículos XXL (Extra Large); solo Small, Medium y Large. El ahorro % se calcula frente al precio normal del tamaño correspondiente. Cifras de descuento corporativo son la propuesta vigente y son ajustables por cliente.</p>
+    <p class="footnote">*Magic price/wash assumes 5 washes per month for comparative purposes — the membership itself is unlimited. Magic does not apply to XXL (Extra Large) vehicles; only Small, Medium, and Large. Savings % is calculated against the standard price of the corresponding size. Corporate discount figures reflect the current proposal and are adjustable per client.</p>
   </div>
 </section>
 
 <footer>
-  <p>MAGIC HANDS CAR WASH AND DETAILING / CERAMICPRO ELITE DEALER · PROPUESTA COMERCIAL CONFIDENCIAL · AGOSTO 2026</p>
+  <p>MAGIC HANDS CAR WASH AND DETAILING / CERAMICPRO ELITE DEALER · CONFIDENTIAL COMMERCIAL PROPOSAL · AUGUST 2026</p>
 </footer>
 
 <script>
@@ -186,7 +186,7 @@
       <div class="base-item">
         <div class="lbl">${s.name}</div>
         <div class="val">${fmt(s.normal)}</div>
-        <div class="sub2">precio normal / lavada</div>
+        <div class="sub2">standard price / wash</div>
       </div>
     `).join('');
   }
@@ -204,7 +204,7 @@
         magicRow = `
           <div class="row-mem na">
             <div class="mname">Magic</div>
-            <div class="mprice">No aplica</div>
+            <div class="mprice">Not applicable</div>
           </div>`;
       } else {
         const magicPrice = memberships.magic.base * (1 - discount);
@@ -212,21 +212,21 @@
         magicRow = `
           <div class="row-mem">
             <div class="mname">Magic*</div>
-            <div class="mprice">${fmt(magicPrice)}<small>ahorro ${magicSavings.toFixed(0)}%</small></div>
+            <div class="mprice">${fmt(magicPrice)}<small>save ${magicSavings.toFixed(0)}%</small></div>
           </div>`;
       }
 
       return `
         <div class="scard">
           <div class="sizename">${s.name}</div>
-          <div class="normal">Precio normal: <b>${fmt(s.normal)}</b></div>
+          <div class="normal">Standard price: <b>${fmt(s.normal)}</b></div>
           <div class="row-mem">
             <div class="mname">Gold</div>
-            <div class="mprice">${fmt(goldPrice)}<small>ahorro ${goldSavings.toFixed(0)}%</small></div>
+            <div class="mprice">${fmt(goldPrice)}<small>save ${goldSavings.toFixed(0)}%</small></div>
           </div>
           <div class="row-mem">
             <div class="mname">Platinum</div>
-            <div class="mprice">${fmt(platPrice)}<small>ahorro ${platSavings.toFixed(0)}%</small></div>
+            <div class="mprice">${fmt(platPrice)}<small>save ${platSavings.toFixed(0)}%</small></div>
           </div>
           ${magicRow}
         </div>

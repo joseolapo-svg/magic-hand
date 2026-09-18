@@ -68,6 +68,11 @@
   .brand{font-family:var(--mono); font-size:13px; letter-spacing:2px; color:var(--text-dim);}
   .brand b{color:var(--gold-bright); font-weight:600;}
   .brand-tag{display:block; font-size:9px; letter-spacing:1.5px; color:var(--text-faint); font-weight:500; margin-top:2px;}
+  .nav-links{display:flex; gap:20px; font-family:var(--mono); font-size:12px; letter-spacing:1px; text-transform:uppercase;}
+  .nav-links a{color:var(--text-dim); text-decoration:none; transition:color .2s;}
+  .nav-links a:hover{color:var(--gold-bright);}
+  
+  .top-right{display:flex; align-items:center; gap:20px;}
   .confidential{font-family:var(--mono); font-size:11px; letter-spacing:2px; color:var(--text-faint); text-transform:uppercase;}
 
   /* ---------- HERO ---------- */
@@ -121,8 +126,6 @@
   .section-head{margin-bottom:40px;}
   .section-head h2{font-size:34px; color:var(--text);}
   .section-head p.lede{margin-top:14px; font-size:16.5px; color:var(--text-dim); max-width:640px;}
-
-  hr.rule{border:none; border-top:1px solid var(--line); margin:32px 0;}
 
   p{color:#D9D6CF; font-size:15.5px; max-width:700px; margin-bottom:16px;}
   ul.plain{list-style:none; margin:20px 0;}
@@ -184,7 +187,17 @@
   .ratetable .pct{color:var(--gold-bright); font-weight:600;}
   .footnote{font-size:12.5px; color:var(--text-faint); margin-top:12px; font-style:italic;}
 
-  /* ---------- CALCULATOR (signature element) ---------- */
+  /* ---------- COMPARATIVE TABLE ---------- */
+  .comparative-table{width:100%; border-collapse:collapse; margin-top:24px; font-size:14px;}
+  .comparative-table th{
+    font-family:var(--mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase;
+    background:var(--panel-2); color:var(--gold-bright); text-align:left; padding:14px 16px; font-weight:500; border-bottom:1px solid var(--line);
+  }
+  .comparative-table td{padding:14px 16px; border-bottom:1px solid var(--line); color:#D9D6CF;}
+  .comparative-table tr:hover{background:rgba(198,161,91,0.04);}
+  .comparative-table td:not(:first-child), .comparative-table th:not(:first-child){text-align:center;}
+
+  /* ---------- CALCULATOR ---------- */
   .calc{
     margin-top:40px;
     border:1px solid var(--gold);
@@ -277,7 +290,14 @@
 <div class="topstrip">
   <div class="wrap">
     <div class="brand"><b>MAGIC HANDS</b><span class="brand-tag">CAR WASH AND DETAILING / CERAMICPRO ELITE DEALER</span></div>
-    <div class="confidential">Commercial Proposal</div>
+    
+    <!-- Eliminado de la sección del medio y colocado al lado de Commercial Proposal -->
+    <div class="top-right">
+      <div class="nav-links">
+        <a href="#comparative">Comparative</a>
+      </div>
+      <div class="confidential">Commercial Proposal</div>
+    </div>
   </div>
 </div>
 
@@ -403,12 +423,64 @@
       </tbody>
     </table>
 
-    <div class="calc">
+    <!-- COMPARATIVE SECTION -->
+    <div id="comparative" style="margin-top:56px;">
+      <div class="section-head" style="margin-bottom:24px;">
+        <div class="eyebrow">Comparative</div>
+        <h2>Plan comparison at a glance</h2>
+        <p class="lede">Compare the core benefits side by side to help your team choose the right fit.</p>
+      </div>
+      <table class="comparative-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Gold</th>
+            <th>Platinum</th>
+            <th>Magic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Duration</td>
+            <td>6 months</td>
+            <td>1 year</td>
+            <td>Monthly (auto-renew)</td>
+          </tr>
+          <tr>
+            <td>Washes</td>
+            <td>12 premium</td>
+            <td>30 premium</td>
+            <td>Unlimited*</td>
+          </tr>
+          <tr>
+            <td>Vehicle Assignment</td>
+            <td>Multi-vehicle</td>
+            <td>Multi-vehicle</td>
+            <td>1 per plate</td>
+          </tr>
+          <tr>
+            <td>Extras Discount</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Special Benefit</td>
+            <td>Free birthday wash</td>
+            <td>Birthday service</td>
+            <td>Convenient renewal</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CALCULATOR SECTION -->
+    <div id="calculator" class="calc">
       <div class="calc-head">
         <h3>Corporate Savings Estimator</h3>
         <div class="tag">Interactive</div>
       </div>
-      <p style="font-size:14px; color:var(--text-dim); margin-top:-10px; margin-bottom:26px;">Here's what your team saves compared to the standard membership price, based on how many people enroll.</p>
+      <p style="font-size:14.5px; color:var(--text-dim); margin-top:-10px; margin-bottom:26px;">Here's what your team saves compared to the standard membership price, based on how many people enroll.</p>
 
       <div class="mix-toggle">
         <button class="mix-btn active" data-mix="frecuente" data-mg="0.70" data-m="0.20" data-p="0.10">Frequent use — mostly Magic</button>

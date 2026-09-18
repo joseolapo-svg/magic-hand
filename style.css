@@ -1,0 +1,103 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333333;
+  line-height: 1.6;
+  scroll-behavior: smooth; /* Permite un desplazamiento fluido al hacer clic en el ancla */
+}
+
+/* Encabezado Adhesivo */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo h1 {
+  font-size: 1.2rem;
+  color: #111111;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #555555;
+  font-size: 0.95rem;
+}
+
+.nav-menu a:hover {
+  color: #000000;
+}
+
+/* Botón Compara con estilos personalizados */
+.btn-compara {
+  font-family: monospace;
+  background-color: #0056b3;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-compara:hover {
+  background-color: #003d82;
+  transform: translateY(-1px);
+}
+
+/* Secciones de ejemplo para la estructura */
+main section {
+  padding: 80px 20px;
+  min-height: 80vh;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.hero {
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.comparison-section {
+  background-color: #ffffff;
+  text-align: center;
+}
+
+/* Ajustes Responsive para Móviles */
+@media (max-width: 768px) {
+  .sticky-header {
+    flex-direction: column;
+    padding: 10px 15px;
+    gap: 10px;
+  }
+
+  .nav-menu {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .btn-compara {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+  }
+}

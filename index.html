@@ -68,11 +68,27 @@
   .brand{font-family:var(--mono); font-size:13px; letter-spacing:2px; color:var(--text-dim);}
   .brand b{color:var(--gold-bright); font-weight:600;}
   .brand-tag{display:block; font-size:9px; letter-spacing:1.5px; color:var(--text-faint); font-weight:500; margin-top:2px;}
-  .nav-links{display:flex; gap:20px; font-family:var(--mono); font-size:12px; letter-spacing:1px; text-transform:uppercase;}
-  .nav-links a{color:var(--text-dim); text-decoration:none; transition:color .2s;}
-  .nav-links a:hover{color:var(--gold-bright);}
   
   .top-right{display:flex; align-items:center; gap:20px;}
+  
+  /* Botón de Comparative con estilo */
+  .btn-comparative{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--gold-bright);
+    background:rgba(198,161,91,0.08);
+    border:1px solid var(--gold);
+    padding:8px 16px;
+    text-decoration:none;
+    transition:all .2s ease;
+  }
+  .btn-comparative:hover{
+    background:var(--gold);
+    color:#0D0F12;
+  }
+
   .confidential{font-family:var(--mono); font-size:11px; letter-spacing:2px; color:var(--text-faint); text-transform:uppercase;}
 
   /* ---------- HERO ---------- */
@@ -291,11 +307,9 @@
   <div class="wrap">
     <div class="brand"><b>MAGIC HANDS</b><span class="brand-tag">CAR WASH AND DETAILING / CERAMICPRO ELITE DEALER</span></div>
     
-    <!-- Eliminado de la sección del medio y colocado al lado de Commercial Proposal -->
+    <!-- Botón con estilo al lado de Commercial Proposal -->
     <div class="top-right">
-      <div class="nav-links">
-        <a href="#comparative">Comparative</a>
-      </div>
+      <a href="comparativo.html" class="btn-comparative">Comparative</a>
       <div class="confidential">Commercial Proposal</div>
     </div>
   </div>

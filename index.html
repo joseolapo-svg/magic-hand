@@ -440,8 +440,12 @@
     
     const baseVal = getBaseValue();
     const monthlySavingPerPerson = baseVal * d;
-    resPerPerson.textContent = '$' + Math.round(monthlySavingPerPerson);
+    
+    // Cálculo coherente: Primero calculamos el total mensual del equipo basado en la regla exacta y luego derivamos el unitario
     const mTotal = Math.round(monthlySavingPerPerson * p);
+    const roundedPerPerson = Math.round(mTotal / p);
+
+    resPerPerson.textContent = '$' + roundedPerPerson;
     resMonthly.textContent = '$' + mTotal.toLocaleString();
     resAnnual.textContent = '$' + (mTotal * 12).toLocaleString();
   }

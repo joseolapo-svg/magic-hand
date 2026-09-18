@@ -253,7 +253,6 @@
   footer{border-top:1px solid var(--line); padding:26px 0; text-align:center;}
   footer p{font-size:11.5px; color:var(--text-faint); margin:0 auto; text-align:center; font-family:var(--mono); letter-spacing:1px;}
 
-  /* Reveal on scroll — visible by default; JS only adds a subtle lift-in if it runs */
   .reveal{opacity:1; transform:translateY(0);}
   .reveal.pre{opacity:0; transform:translateY(20px); transition:opacity .7s ease, transform .7s ease;}
   .reveal.pre.in{opacity:1; transform:translateY(0);}
@@ -412,9 +411,9 @@
       <p style="font-size:14px; color:var(--text-dim); margin-top:-10px; margin-bottom:26px;">Here's what your team saves compared to the standard membership price, based on how many people enroll.</p>
 
       <div class="mix-toggle">
-        <button class="mix-btn active" data-mix="frecuente" data-m="0.20" data-p="0.10" data-mg="0.70">Frequent use — mostly Magic</button>
-        <button class="mix-btn" data-mix="mixto" data-m="0.30" data-p="0.20" data-mg="0.50">Mixed use</button>
-        <button class="mix-btn" data-mix="multivehiculo" data-m="0.40" data-p="0.40" data-mg="0.20">Multi-vehicle — mostly Gold/Platinum</button>
+        <button class="mix-btn active" data-mix="frecuente" data-mg="0.70" data-m="0.20" data-p="0.10">Frequent use — mostly Magic</button>
+        <button class="mix-btn" data-mix="mixto" data-mg="0.50" data-m="0.30" data-p="0.20">Mixed use</button>
+        <button class="mix-btn" data-mix="multivehiculo" data-mg="0.20" data-m="0.40" data-p="0.40">Multi-vehicle — mostly Gold/Platinum</button>
       </div>
 
       <div class="slider-row">
@@ -465,7 +464,6 @@
 </footer>
 
 <script>
-  // Scroll reveal
   if('IntersectionObserver' in window){
     const revealEls = document.querySelectorAll('.reveal');
     revealEls.forEach(el => el.classList.add('pre'));
@@ -475,7 +473,6 @@
     revealEls.forEach(el => io.observe(el));
   }
 
-  // Savings calculator
   const empSlider = document.getElementById('empSlider');
   const empVal = document.getElementById('empVal');
   const mixBtns = document.querySelectorAll('.mix-btn');
@@ -517,7 +514,6 @@
     const annualTotal = monthlyTotal * 12;
 
     document.getElementById('svDiscount').textContent = (d*100).toFixed(0) + '%';
-    // Se ajustó para mostrar 2 decimales y reflejar con precisión $5.45 en lugar de redondear a $6
     document.getElementById('svAvg').textContent = fmt(avgSavingsPerEmployee, 2);
     document.getElementById('svMonthly').textContent = fmt(monthlyTotal);
     document.getElementById('svAnnual').textContent = fmt(annualTotal);
